@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      var text = "";
+      var k;
+      for (
+        k = 0;
+        k < 10;
+        k++
+      ) {
+        if (k === 7) {
+          continue;
+        }
+        text +=
+          "The number is " +
+          k +
+          "<br>";
+      }
+      document.getElementById(
+        "maddy"
+      ).innerHTML = text;
+    </script>
+  </body>
+</html>

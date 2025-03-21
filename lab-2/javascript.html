@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Boxes</title>
+    <script>
+        function showAlert() {
+            alert("This is an alert box!");
+        }
+
+        function showConfirm() {
+            let result = confirm("Do you want to proceed?");
+            if (result) {
+                alert("You clicked OK!");
+            } else {
+                alert("You clicked Cancel!");
+            }
+        }
+
+        function showPopup() {
+            document.getElementById("popupMessage").innerText = "This is a popup message displayed on the page.";
+        }
+
+        function showPrompt() {
+            let userInput = prompt("Please enter your name:", "");
+            if (userInput !== null && userInput !== "") {
+                document.getElementById("promptMessage").innerText = "Hello, " + userInput + "!";
+                
+            } else {
+                document.getElementById("promptMessage").innerText = "You did not enter anything.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Click the buttons to see different dialog boxes</h2>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showConfirm()">Show Confirm</button>
+    <button onclick="showPopup()">Show Popup</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+    <input type="text">
+    <p id="popupMessage" style="font-weight: bold; color: blue;"></p>
+    <p id="promptMessage" style="font-weight: bold; color
+: green;"></p>
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      Read File in HTML
+    </title>
+  </head>
+  <body>
+    <h2>
+      Read a file from your
+      system
+    </h2>
+    <input
+      type="file"
+      id="fileInput"
+    />
+    <div
+      id="fileContent"
+    ></div>
+
+    <script>
+      document
+        .getElementById(
+          "fileInput"
+        )
+        .addEventListener(
+          "change",
+          function (event) {
+            const file =
+              event.target
+                .files[0]; // Get the first file
+            if (file) {
+              const reader =
+                new FileReader();
+
+              reader.onload =
+                function (e) {
+                  const fileContent =
+                    e.target
+                      .result; // This contains the file data
+                  document.getElementById(
+                    "fileContent"
+                  ).textContent =
+                    fileContent;
+                };
+
+              reader.readAsText(
+                file
+              ); // Reads the file as text
+            }
+          }
+        );
+    </script>
+  </body>
+</html>

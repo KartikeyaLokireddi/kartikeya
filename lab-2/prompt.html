@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      User Information
+    </title>
+  </head>
+  <body>
+    <h2>
+      Enter Your Details
+    </h2>
+
+    <button
+      onclick="getUserInfo()"
+    >
+      Click to Enter Info
+    </button>
+
+    <p id="userInfo"></p>
+
+    <script>
+      function getUserInfo() {
+        var name = prompt(
+          "What is your name?"
+        );
+        var age = prompt(
+          "How old are you?"
+        );
+        var gender = prompt(
+          "What is your gender?"
+        );
+
+        if (
+          name &&
+          age &&
+          gender
+        ) {
+          document.getElementById(
+            "userInfo"
+          ).innerHTML =
+            "<strong>Name:</strong>" +
+            name +
+            "<br>" +
+            `<strong>Age:</strong> ${age}<br>
+          <strong>Gender:</strong> ${gender}`;
+        } else {
+          document.getElementById(
+            "userInfo"
+          ).innerHTML =
+            "You didn't provide all the information.";
+        }
+      }
+    </script>
+  </body>
+</html>

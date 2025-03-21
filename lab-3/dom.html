@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>DOM Example</title>
+  </head>
+  <body>
+    <h1 id="title">
+      Hello, world!
+    </h1>
+    <button
+      onclick="changeText()"
+    >
+      Change Text
+    </button>
+
+    <script>
+      function changeText() {
+        // Access the DOM element using getElementById
+        var title =
+          document.getElementById(
+            "title"
+          );
+        title.innerHTML =
+          "Text has been changed!";
+      }
+    </script>
+  </body>
+</html>

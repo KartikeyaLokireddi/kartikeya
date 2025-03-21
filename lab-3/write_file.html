@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Write to File Example
+    </title>
+  </head>
+  <body>
+    <h1>
+      Write to File Example
+    </h1>
+    <textarea
+      id="textInput"
+      rows="10"
+      cols="30"
+      placeholder="Write something here..."
+    ></textarea>
+    <br /><br />
+    <button id="saveButton">
+      Save to File
+    </button>
+
+    <script>
+      document
+        .getElementById(
+          "saveButton"
+        )
+        .addEventListener(
+          "click",
+          function () {
+            const text =
+              document.getElementById(
+                "textInput"
+              ).value;
+            const blob =
+              new Blob(
+                [text],
+                {
+                  type: "text/plain",
+                }
+              );
+            const link =
+              document.createElement(
+                "a"
+              );
+            link.href =
+              URL.createObjectURL(
+                blob
+              );
+            link.download =
+              "file.txt";
+            link.click();
+          }
+        );
+    </script>
+  </body>
+</html>

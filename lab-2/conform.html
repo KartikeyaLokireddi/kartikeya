@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      Confirmation Box Example
+    </title>
+  </head>
+  <body>
+    <button
+      onclick="showConfirm()"
+    >
+      Click Me to conform
+    </button>
+
+    <script>
+      function showConfirm() {
+        let userResponse =
+          confirm(
+            "u are clicking conform?"
+          );
+        if (userResponse) {
+          alert(
+            "You clicked OK! Kid"
+          );
+        } else {
+          alert(
+            "You clicked Cancel! Kid"
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
